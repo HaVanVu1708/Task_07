@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Welcome to ZingMp3 </h1>
+<br />
+
+@model MusicsListViewModel
+
+<div class="row"> 
+    @foreach(var p in Model.Musics)
+
+    {
+        
+        <div class="col-3">
+            <h3>
+                @p.Name
+            </h3>
+            
+            <Br/>
+            
+            <img src="~/Images/@p.UrlImage" alt="Alternate Text" width="200" height="200"/>
+            <br />
+            <br />
+
+            <p>Cập nhật : <b> @p.ReleaseDate</b></p>
+            <p>Nghệ Sĩ : <b>@p.Author</b></p> 
+            <p>Lượt thích : <b>@p.Likes</b> </p>
+            <p>Giá : <b>@p.Price</b> </p>
+       
+        </div>
+    }
+<div page-model="@Model.PagingInfo" page-ation="Index" class="Text-ceter font-weight-bold" ></div>
+</div>
